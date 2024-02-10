@@ -10,6 +10,7 @@ export const signup = async (req,res) => {
   try {
     const{ fulName, userName, password, confirmPassword } = req.body;
   }
-  } catch (error) {
-    
+  catch (error) {
+    console.log(error);
   }
+};
