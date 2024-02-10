@@ -10,10 +10,8 @@ const app = express();
 
 const PORT = process.env.PORT || 8000;
 
-app.get("/",(req,res) => {
-  res.send("HEllo World") 
-});
 
+app.use(express.json());  //to parse the incoming requests from JSON payloads (from req.body)
 app.use("/api/auth",authRoutes);
 
 connectDB()
