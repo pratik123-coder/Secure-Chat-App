@@ -5,6 +5,7 @@ import connectDB from "./db/index.js";
 
 //Route Imports
 import authRoutes from "./routes/auth.routes.js";
+import messageRoutes from "./routes/message.routes.js";
 
 const app = express();
 
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 8000;
 
 app.use(express.json());  //to parse the incoming requests from JSON payloads (from req.body)
 app.use("/api/auth",authRoutes);
+app.use("/api/messages",messageRoutes);
 
 connectDB()
 .then(() => {
