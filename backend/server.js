@@ -7,6 +7,7 @@ import connectDB from "./db/index.js";
 //Route Imports
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
+import userRoutes from "./routes/user.routes.js";
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(cookieParser()); //middleware for cookie
 
 app.use("/api/auth",authRoutes);
 app.use("/api/messages",messageRoutes);
+app.use("/api/users",userRoutes);
 
 connectDB()
 .then(() => {
