@@ -22,6 +22,11 @@ const userSchema = new Schema({
     type: String,
     required: [true, "Password is Required"]
   },
+  gender: {
+    type: String,
+    required: true,
+    enum: ["male", "female"]
+  }
 },
   {
     timestamps: true
