@@ -1,14 +1,14 @@
-import Conversation from "./Conversation";
+import Convo from "./Convo";
 
 const Conversations = () => {
 	return (
 		<div className='py-2 flex flex-col overflow-auto'>
-			<Conversation />
-			<Conversation />
-			<Conversation />
-			<Conversation />
-			<Conversation />
-			<Conversation />
+			<Convo />
+			<Convo />
+			<Convo />
+			<Convo />
+			<Convo />
+			<Convo />
 		</div>
 	);
 };
