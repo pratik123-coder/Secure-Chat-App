@@ -52,19 +52,20 @@ const useSignup = () => {
 
 export default useSignup
 
-function handleInputErrors({fullName,username,password,confirmPassword,gender}){
-  if( !fullName || !username || !password || !confirmPassword || !gender ){
-    toast.error('Please Fill All the fields')
-    return false
+function handleInputErrors({ fullName, username, password, confirmPassword, gender }) {
+  if (!fullName || !username || !password || !confirmPassword || !gender) {
+    toast.error('Please Fill All the fields');
+    return false;
   }
   if (password !== confirmPassword) {
-    toast.error('Passwords don\'t match')
-    return false
+    toast.error("Passwords don't match");
+    return false;
   }
-  if (password.lenth < 6) {
-    toast.error('Password must be at least 6 characters')
-    return false
+  if (password.length < 6) {
+    toast.error('Password must be at least 6 characters');
+    return false;
   }
   
-  return true
+  // Moved outside of conditional checks
+  return true;
 }
