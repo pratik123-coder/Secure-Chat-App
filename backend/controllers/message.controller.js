@@ -1,5 +1,6 @@
 import Conversation from "../models/converstation.model.js";
 import { Message } from "../models/message.model.js";
+import { getReceiverSocketId } from "../socket/socket.js";
 
 export const sendMessage = async ( req, res ) => {
     try {
@@ -26,7 +27,18 @@ export const sendMessage = async ( req, res ) => {
             converstation.messages.push(newMessage._id);
             
         }
-        await converstation.save();
+        await Promise.all([converstation.save(),newMessage.save()]);
+
+        //SOCKET IO FUNCTIONALITY (TODO: implement)
+
+        const recieverSocketID = getReceiverSocketId(recieverId);
+        if(recieverSocketID){
+            //io.to(<Socket_io>).emit() is used to send events to specific clients
+            io.to(recieverSocketID).emit("newMessage",newMessage);
+        }
+
+
+
         res.status(201).json(newMessage);
     } catch (error) {
         console.log("Error in Sending Message",error.message);
