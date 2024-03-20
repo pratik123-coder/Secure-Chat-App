@@ -27,7 +27,7 @@ export const sendMessage = async ( req, res ) => {
             converstation.messages.push(newMessage._id);
             
         }
-        await Promise.all([converstation.save(),newMessage.save()]);
+        await converstation.save();
 
         //SOCKET IO FUNCTIONALITY (TODO: implement)
 
