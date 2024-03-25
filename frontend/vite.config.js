@@ -8,7 +8,7 @@ export default defineConfig({
     port: 3000,
     proxy:{
       "/api": {
-        target: 'https://secure-chat-app-mu.vercel.app',
+        target: 'https://secure-chat-app-3hiy.onrender.com',
       }
     }
   },

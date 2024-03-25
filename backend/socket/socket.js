@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: ["https://secure-chat-app-mu.vercel.app"],
+        origin: ["https://secure-chat-app-3hiy.onrender.com"],
         methods: ["GET", "POST"],
     },
 });
