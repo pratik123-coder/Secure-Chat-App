@@ -8,7 +8,7 @@ export default defineConfig({
     port: 3000,
     proxy:{
       "/api": {
-        target: 'https://secure-chat-b0il0y9le-pratik123-coder.vercel.app',
+        target: 'https://secure-chat-app-mu.vercel.app',
       }
     }
   },
