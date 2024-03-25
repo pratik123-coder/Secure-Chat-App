@@ -8,7 +8,7 @@ export default defineConfig({
     port: 3000,
     proxy:{
       "/api": {
-        target: 'https://secure-chat-app-3hiy.onrender.com',
+        target: 'http://localhost:8000',
       }
     }
   },
